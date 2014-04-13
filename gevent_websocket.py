@@ -6,7 +6,10 @@ from geventwebsocket import WebSocketServer, WebSocketApplication, Resource
 
 class EchoApplication(WebSocketApplication):
     def on_message(self, message):
-        self.ws.send(message)
+        try:
+            self.ws.send(message)
+        except:
+            pass
 
 
 WebSocketServer(
