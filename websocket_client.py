@@ -43,7 +43,8 @@ def echo():
     ws.close()
 
 gevent.joinall(
-    [gevent.spawn(echo) for i in xrange(0, spawn_count)]
+    [gevent.spawn(echo) for i in xrange(0, spawn_count)],
+    timeout=10.0
 )
 
 print "echo: %i, error: %i, echo per sec: %f" % (
