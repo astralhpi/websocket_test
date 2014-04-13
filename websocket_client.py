@@ -7,7 +7,7 @@ from websocket import create_connection
 import random
 import time
 
-spawn_count = 10000
+spawn_count = 1000
 
 
 def random_hash():
@@ -25,10 +25,10 @@ def echo():
     global error
 
     try:
-        ws = create_connection('ws://localhost:8000/echo')
+        ws = create_connection('ws://182.162.143.241:8000/echo')
     except:
         time.sleep(1)
-        ws = create_connection('ws://localhost:8000/echo')
+        ws = create_connection('ws://182.162.143.241:8000/echo')
     start_time = time.time()
     cur_time = time.time()
     while cur_time - start_time < 10.0:
